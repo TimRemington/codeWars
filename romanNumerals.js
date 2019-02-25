@@ -5,7 +5,10 @@ function validRomans(arr) {
   let finalArr = []
 
   for (let i = 0; i < arr.length; i++){
-    if(reg.test(arr[i])){
+    if(arr[i] === ""){
+      console.log(arr[i])
+    }
+    else if (arr[i].match(reg)[0] === arr[i]) {
       finalArr.push(arr[i])
     }
   }
