@@ -9,5 +9,19 @@ Note: If the number is a multiple of both 3 and 5, only count it once.
 */
 
 function solution(number){
+  let total = 0
 
+  for (let i = number - 1; i > 0; i--){
+    if (i % 3 === 0 && i % 5 === 0){
+      total += i
+      consolelog('puppies')
+    } else if ( i % 3 === 0 ) {
+      total += i
+    } else if ( i % 5 === 0 ) {
+      total += i
+    }
+    console.log(total)
+  }
+
+  return total
 }
