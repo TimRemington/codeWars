@@ -9,5 +9,20 @@ isIsogram( "moOse" ) == false // -- ignore letter case
 */
 
 function isIsogram(str){
-  //...
+  let arrSplit = str.split('')
+  let letter = ""
+
+  while (arrSplit.length > 0) {
+    letter = arrSplit.pop().toLowerCase()
+    console.log(letter)
+
+    for (let i = 0; i < arrSplit.length; i++) {
+      if(letter === arrSplit[i].toLowerCase()){
+        return false
+      }
+    }
+
+  }
+
+  return true
 }
