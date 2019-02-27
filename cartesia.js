@@ -7,5 +7,33 @@ Note: you will always receive a valid array containing a random assortment of di
 */
 
 function isValidWalk(walk) {
-  //insert brilliant code here
+  let ns = 0
+  let ew = 0
+
+  if (walk.length > 10 || walk.length % 2 !== 0) {
+    return false
+  }
+
+  for(let i = 0; i < walk.length; i++) {
+    switch (walk[i]){
+    case "n":
+      ns += 1
+      break;
+    case "s":
+      ns -= 1
+      break;
+    case "e":
+      ew += 1
+      break;
+    case "w":
+      ew -= 1
+      break;
+    }
+  }
+
+  if (ns === 0 && ew === 0){
+    return true
+  } else {
+  return false
+  }
 }
