@@ -32,7 +32,31 @@ If you are given an array with multiple answers, return the lowest correct index
 An empty array should be treated like a 0 in this problem.
 */
 
-function findEvenIndex(arr)
-{
-  //Code goes here!
+function findEvenIndex(arr) {
+ let leftSum = 0
+ let rightSum = 0
+
+ // initial loop to go through the array
+ for (let i = 0; i < arr.length; i++){
+
+   // loop to add up left side of array
+   for (let j = 0; j < i; j++) {
+     leftSum += arr[j]
+   }
+
+   // loop to add up right side of array
+   for (let k = arr.length - 1; k > i; k--) {
+     rightSum += arr[k]
+   }
+
+   // checks to see if sides are equal
+   if (rightSum === leftSum) {
+     return i
+   }
+
+   // resets the sides
+   rightSum = 0
+   leftSum = 0
+ }
+ return -1
 }
