@@ -17,5 +17,25 @@ Signature will always contain 3 numbers; n will always be a non-negative number;
 */
 
 function tribonacci(signature,n){
-  //your code here
+  let result = signature
+  if (signature.length !== 3 || n === 0) {
+    return []
+  }
+
+  if (n === 1) {
+    result.pop()
+    result.pop()
+    return result
+  }
+
+  if (n === 2) {
+    result.pop()
+    return restult
+  }
+
+  for (let i = signature.length; i < n; i++) {
+    result.push(result[i - 3] + result[i - 2] + result[i - 1])
+  }
+
+  return result
 }
