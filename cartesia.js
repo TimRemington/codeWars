@@ -10,7 +10,7 @@ function isValidWalk(walk) {
   let ns = 0
   let ew = 0
 
-  if (walk.length > 10 || walk.length % 2 !== 0) {
+  if (walk.length > 10) {
     return false
   }
 
