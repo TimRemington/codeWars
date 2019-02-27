@@ -18,21 +18,26 @@ Signature will always contain 3 numbers; n will always be a non-negative number;
 
 function tribonacci(signature,n){
   let result = signature
+
+  // accounts for invalide signatures and n of 0
   if (signature.length !== 3 || n === 0) {
     return []
   }
 
+  // Removes last two elements if n is 1
   if (n === 1) {
     result.pop()
     result.pop()
     return result
   }
 
+  // removes last element if n is 2
   if (n === 2) {
     result.pop()
     return restult
   }
 
+  // cycles through and makes the correct array
   for (let i = signature.length; i < n; i++) {
     result.push(result[i - 3] + result[i - 2] + result[i - 1])
   }
