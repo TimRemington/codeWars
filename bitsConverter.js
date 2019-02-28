@@ -7,7 +7,13 @@ Example: The binary representation of 1234 is 10011010010, so the function shoul
 */
 
 var countBits = function(n) {
-  let result = (+n).toString(2)
+  let converter = (+n).toString(2)
+  let splitArr = converter.split('')
+  let result = 0
 
-  return Number(result)
+  for (let i = 0; i < splitArr.length; i++){
+    result += Number(splitArr[i])
+  }
+
+  return result
 }
