@@ -21,5 +21,16 @@ songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")
 */
 
 function songDecoder(song){
+  let split = song.split('')
+  let result = ""
 
+  for (let i = 0; i < split.length; i++) {
+    if(split[i] === " ") {
+
+    } else {
+
+    }
+  }
+
+  return result
 }
