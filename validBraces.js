@@ -19,44 +19,17 @@ Examples
 */
 
 function validBraces(braces){
-  let arrSplit = braces.split('')
-  let bracketLeft = 0
-  let bracketRight = 0
-  let braceLeft = 0
-  let braceRight = 0
-  let parenthesesLeft = 0
-  let parenthesesRight = 0
+  let pairs = { ')' : '(', ']' : '[', '}' : '{' }
+  let stack = [];
 
-  for (let i = 0; i < arrSplit.length; i++) {
-    if(arrSplit[i] === "["){
-      bracketLeft += 1
-    }
-    if(arrSplit[i] === "]"){
-      bracketRight += 1
-    }
-    if(arrSplit[i] === "{"){
-      braceLeft += 1
-    }
-    if(arrSplit[i] === "}"){
-      braceRight += 1
-    }
-    if(arrSplit[i] === "("){
-      parenthesesLeft += 1
-    }
-    if(arrSplit[i] === ")"){
-      parenthesesRight += 1
-    }
-
+  for (var i = 0; i < braces.length; ++i) {
+    if (braces[i] === '(' || braces[i] === '[' || braces[i] === '{')
+      stack.push(braces[i]);
+    else if (stack[stack.length-1] === pairs[braces[i]])
+      stack.pop();
+    else
+      return false; // catchall
   }
 
-let right = bracketRight + braceRight + parenthesesRight
-let left = bracketLeft + braceLeft + parenthesesLeft
-let total = right - left
-
-if(total === 0) {
-  return true
-} else {
-  return false
-}
-
+    return stack.length === 0;
 }
