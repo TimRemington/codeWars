@@ -25,12 +25,10 @@ function songDecoder(song){
   let result = ""
 
   for (let i = 0; i < split.length; i++) {
-    if(split[i] === " ") {
-
-    } else {
-
+    if(split[i] === "W" && split[i + 1] === "U" && split[i + 2] === "B") {
+      split.splice(i, 3, " ")
     }
   }
 
-  return result
+  return split.join('')
 }
