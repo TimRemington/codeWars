@@ -15,5 +15,25 @@ Example
 */
 
 function duplicateCount(text){
-  
+  let arr = text.split('')
+  let obj = {}
+  let total = 0
+  let temp = ''
+
+  for (let i = 0; i < arr.length; i++) {
+    temp = arr[i].toLowerCase()
+    if(!obj[temp]) {
+      obj[temp] = 1
+    } else {
+      obj[temp] += 1
+    }
+  }
+
+  for (let item in obj) {
+    if (obj[item] > 1) {
+      total += 1
+    }
+  }
+
+  return total
 }
