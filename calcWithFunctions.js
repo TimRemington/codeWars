@@ -65,7 +65,15 @@ function nine(num) {
   else {return eval("9 " + num)}
 }
 
-function plus() {}
-function minus() {}
-function times() {}
-function dividedBy() {}
+function plus(num) {
+  return " + " + num
+}
+function minus(num) {
+  return " - " + num
+}
+function times(num) {
+  return " * " + num
+}
+function dividedBy(num) {
+  return " / " + num
+}
