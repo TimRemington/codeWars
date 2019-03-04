@@ -19,6 +19,25 @@ argument	returns
 */
 
 function pythagoreanTriplet (n) {
+  let arr = [];
+  for (var i = 1; i <= n; i++) {
+    arr.push(i);
+  }
 
+  for (var i = 0; i < arr.length; i++) {
+    for (var k = 0; k < arr.length; k++) {
+      for (var p = 0; p < arr.length; p++) {
+
+        let a2 = Math.pow(arr[i], 2)
+        let b2 = Math.pow(arr[k], 2)
+        let c2 = Math.pow(arr[p], 2)
+
+        if(a2 + b2 == c2 && arr[i] + arr[k] + arr[p] == n) {
+          return [arr[i], arr[k], arr[p]]
+        }
+      }
+    }
+  }
+  return []
 
 }
