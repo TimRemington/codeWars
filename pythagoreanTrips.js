@@ -32,7 +32,7 @@ function pythagoreanTriplet (n) {
         let b2 = Math.pow(arr[k], 2)
         let c2 = Math.pow(arr[p], 2)
 
-        if(a2 + b2 == c2 && arr[i] + arr[k] + arr[p] == n) {
+        if(a2 + b2 == c2 && arr[i] * arr[k] * arr[p] == n) {
           return [arr[i], arr[k], arr[p]]
         }
       }
