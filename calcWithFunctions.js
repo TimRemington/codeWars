@@ -24,16 +24,46 @@ The most outer function represents the left operand, the most inner function rep
 Divison should be integer division, e.g eight(dividedBy(three()))/eight(divided_by(three)) should return 2, not 2.666666...
 */
 
-function zero() {}
-function one() {}
-function two() {}
-function three() {}
-function four() {}
-function five() {}
-function six() {}
-function seven() {}
-function eight() {}
-function nine() {}
+function zero(num) {
+  if (num === undefined) {return "0"}
+  else {return eval("0 " + num)}
+}
+function one(num) {
+  if (num === undefined) {return "1"}
+  else {return eval("1 " + num)}
+}
+function two(num) {
+  if (num === undefined) {return "2"}
+  else {return eval("2 " + num)}
+}
+function three(num) {
+  if (num === undefined) {return "3"}
+  else {return eval("3 " + num)}
+}
+function four(num) {
+  if (num === undefined) {return "4"}
+  else {return eval("4 " + num)}
+}
+function five(num) {
+  if (num === undefined) {return "5"}
+  else {return eval("5 " + num)}
+}
+function six(num) {
+  if (num === undefined) {return "6"}
+  else {return eval("6 " + num)}
+}
+function seven(num) {
+  if (num === undefined) {return "7"}
+  else {return eval("7 " + num)}
+}
+function eight(num) {
+  if (num === undefined) {return "8"}
+  else {return eval("8 " + num)}
+}
+function nine(num) {
+  if (num === undefined) {return "9"}
+  else {return eval("9 " + num)}
+}
 
 function plus() {}
 function minus() {}
