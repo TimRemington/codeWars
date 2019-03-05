@@ -17,7 +17,11 @@ function pigIt(str){
   for(let i = 0; i < words.length; i++) {
     letter = words[i][0]
     temp = words[i].substring(1)
+    if (letter === "!" || letter === "?") {
+      result.push(letter)
+    } else {
     result.push(temp + letter + 'ay')
+    }
   }
 
   return result.join(' ')
