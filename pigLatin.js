@@ -9,5 +9,17 @@ pigIt('Hello world !');     // elloHay orldway !
 */
 
 function pigIt(str){
-  //Code here
+  let words = str.split(' ')
+  let letter = ""
+  let temp = ""
+  let result = []
+
+  for(let i = 0; i < words.length; i++) {
+    letter = words[i][0]
+    temp = words[i].substring(1)
+    result.push(temp + letter + 'ay')
+  }
+
+  return result.join(' ')
+
 }
