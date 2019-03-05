@@ -19,25 +19,27 @@ argument	returns
 */
 
 function pythagoreanTriplet (n) {
+  let a2 = 0
+  let b2 = 0
+  let c2 = 0
 
-for (var i = 0; i < n / 10; i++) {
-  for (var k = 0; k < n / 10; k++) {
-    for (var p = 0; p < n / 10; p++) {
+  for (var i = 3; i < n / 11; i++) {
+    a2 = i * i
+    for (var k = 2; k < n / 11; k++) {
+      b2 = k * k
+      for (var p = 1; p < n / 11; p++) {
+        c2 = p * p
 
-      let a2 = Math.pow(i, 2)
-      let b2 = Math.pow(k, 2)
-      let c2 = Math.pow(p, 2)
+        if(i * k * p > n) {
+          p = n
+        }
 
-      if(i * k * p > n) {
-        p = n
-      }
-
-      if(a2 + b2 == c2 && i * k * p == n) {
-        return [i, k, p]
+        if(a2 + b2 == c2 && i * k * p == n) {
+          return [i, k, p]
+        }
       }
     }
   }
-}
-return []
+  return []
 
 }
