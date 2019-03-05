@@ -20,20 +20,24 @@ argument	returns
 
 function pythagoreanTriplet (n) {
 
-  for (var i = 0; i < n; i++) {
-    for (var k = 0; k < n; k++) {
-      for (var p = 0; p < n; p++) {
+for (var i = 0; i < n / 10; i++) {
+  for (var k = 0; k < n / 10; k++) {
+    for (var p = 0; p < n / 10; p++) {
 
-        let a2 = Math.pow(i, 2)
-        let b2 = Math.pow(k, 2)
-        let c2 = Math.pow(p, 2)
+      let a2 = Math.pow(i, 2)
+      let b2 = Math.pow(k, 2)
+      let c2 = Math.pow(p, 2)
 
-        if(a2 + b2 == c2 && i * k * p == n) {
-          return [i, k, p]
-        }
+      if(i * k * p > n) {
+        p = n
+      }
+
+      if(a2 + b2 == c2 && i * k * p == n) {
+        return [i, k, p]
       }
     }
   }
-  return []
+}
+return []
 
 }
