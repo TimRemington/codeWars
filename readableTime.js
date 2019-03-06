@@ -14,7 +14,27 @@ You can find some examples in the test fixtures.
 */
 
 function humanReadable(seconds) {
-  let hours = Math.floor(((seconds % 31536000) % 86400) / 3600);
-  let min = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
-  let sec = (((seconds % 31536000) % 86400) % 3600) % 60;
+  let hours = (Math.floor(((seconds % 31536000) % 86400) / 3600)).toString()
+  let min = (Math.floor((((seconds % 31536000) % 86400) % 3600) / 60)).toString()
+  let sec = ((((seconds % 31536000) % 86400) % 3600) % 60).toString()
+
+  if (hours.length !== 2) {
+    while (hours.length !== 2) {
+      hours += "0"
+    }
+  }
+
+  if (min.length !== 2) {
+    while (min.length !== 2) {
+      min += "0"
+    }
+  }
+
+  if (sec.length !== 2) {
+    while (sec.length !== 2) {
+      sec += "0"
+    }
+  }
+
+  return hours + ":" + min + ":" + sec
 }
