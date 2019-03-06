@@ -14,5 +14,7 @@ You can find some examples in the test fixtures.
 */
 
 function humanReadable(seconds) {
-  // TODO
+  let hours = Math.floor(((seconds % 31536000) % 86400) / 3600);
+  let min = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
+  let sec = (((seconds % 31536000) % 86400) % 3600) % 60;
 }
