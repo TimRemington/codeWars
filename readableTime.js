@@ -14,7 +14,7 @@ You can find some examples in the test fixtures.
 */
 
 function humanReadable(seconds) {
-  let hours = (Math.floor(((seconds % 31536000) % 86400) / 3600)).toString()
+  let hours = (Math.floor(seconds / 3600)).toString()
   let min = (Math.floor((((seconds % 31536000) % 86400) % 3600) / 60)).toString()
   let sec = ((((seconds % 31536000) % 86400) % 3600) % 60).toString()
 
