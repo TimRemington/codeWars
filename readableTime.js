@@ -20,19 +20,19 @@ function humanReadable(seconds) {
 
   if (hours.length !== 2) {
     while (hours.length !== 2) {
-      hours += "0"
+      hours = "0" + hours
     }
   }
 
   if (min.length !== 2) {
     while (min.length !== 2) {
-      min += "0"
+      min = "0" + min
     }
   }
 
   if (sec.length !== 2) {
     while (sec.length !== 2) {
-      sec += "0"
+      sec = "0" + sec
     }
   }
 
