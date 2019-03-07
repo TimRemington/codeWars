@@ -37,3 +37,9 @@ function sumStrings(a,b) {
     return total
   }
 }
+
+// or
+
+function betterAnswer(a,b) {
+  return BigInt(a) + bigInt(b)
+}
