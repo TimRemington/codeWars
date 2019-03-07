@@ -1,13 +1,21 @@
 // Working on string manipulation problem from codeWars
 
 /*
-Given the string representations of two integers, return the string representation of the sum of those integers.
+Your job is to write a function which increments a string, to create a new string. If the string already ends with a number, the number should be incremented by 1. If the string does not end with a number the number 1 should be appended to the new string.
 
-For example:
+Examples:
 
-sumStrings('1','2') // => '3'
-A string representation of an integer will contain no characters besides the ten numerals "0" to "9"
-*/
+foo -> foo1
+
+foobar23 -> foobar24
+
+foo0042 -> foo0043
+
+foo9 -> foo10
+
+foo099 -> foo100
+
+Attention: If the number has leading zeros the amount of digits should be considered.*/
 
 function incrementString (strng) {
   // return incrementedString
