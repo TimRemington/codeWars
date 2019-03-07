@@ -36,3 +36,4 @@ function sumStrings(a,b) {
   } else {
     return total
   }
+}
