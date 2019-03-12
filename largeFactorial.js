@@ -7,3 +7,7 @@ Your mission is simple: write a function that takes an integer n and returns the
 
 You are guaranteed an integer argument. For any values outside the non-negative range, return null, nil or None (return an empty string "" in C and C++). For non-negative numbers a full length number is expected for example, return 25! = "15511210043330985984000000" as a string.
 */
+
+function factorial(userInt){
+
+}
