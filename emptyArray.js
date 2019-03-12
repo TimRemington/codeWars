@@ -17,5 +17,7 @@ After: [1, 2, 3, 4, null, undefined];
 */
 
 function clean(arr) {
+  let result = arr.filter(function () { return true })
 
+return result
 }
