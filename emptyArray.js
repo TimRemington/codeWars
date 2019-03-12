@@ -15,3 +15,7 @@ Before: [1, 2, 3, <5 empty items>, 4, <1 empty item>, null, undefined];
 
 After: [1, 2, 3, 4, null, undefined];
 */
+
+function clean(arr) {
+
+}
