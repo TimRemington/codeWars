@@ -38,5 +38,20 @@ a = ["az", "toto", "picaro", "zone", "kiwi"] -->
 
 
 function partlist(arr) {
-    // your code
+    let result = []
+    let len = arr.length - 1
+    let first = ""
+    let second = ""
+
+    for(let i = 0; i < len; i++){
+      first += arr.shift() + " "
+      console.log(first)
+      second = arr.join(' ')
+      console.log(second)
+
+      result[i] = [first, second]
+      console.log("Result ====> ", result)
+    }
+
+    return result
 }
