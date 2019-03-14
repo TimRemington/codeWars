@@ -1,4 +1,4 @@
-
+// Working on string problem from codeWars
 
 /*
 Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
@@ -35,3 +35,8 @@ a = ["az", "toto", "picaro", "zone", "kiwi"] -->
 
 "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
 */
+
+
+function partlist(arr) {
+    // your code
+}
