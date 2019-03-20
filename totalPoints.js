@@ -18,5 +18,24 @@ there are 10 matches in the championship
 */
 
 function points(games) {
-  // your code here
+  let result = 0
+  let temp = ''
+  let x = 0
+  let y = 0
+
+  for (let i = 0; i < games.length; i++) {
+    temp = games[i].split("")
+    x = Number(temp[0])
+    y = Number(temp[2])
+
+    if(x > y){
+      result +=3
+    } else if(y === x) {
+      result += 1
+    } else {
+      result += 0
+    }
+  }
+
+  return result
 }
