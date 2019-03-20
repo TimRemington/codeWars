@@ -28,5 +28,14 @@ Note: Don't forget to convert the percent parameter as a percentage in the body 
 */
 
 function nbYear(p0, percent, aug, p) {
-    // your code
+    let years = 0
+    let totalPop = p0
+    let actualPercent = percent * .01
+
+    while(totalPop < p){
+      totalPop = totalPop + (totalPop * actualPercent) + aug
+      years++
+    }
+
+    return years
 }
