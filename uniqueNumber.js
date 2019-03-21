@@ -16,6 +16,16 @@ Find the unique string
 Find The Unique
 */
 
+// Better solution
+function findUniq(arr) {
+  for(let i = 0; i < arr.length; i++) {
+    if(arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
+      return arr[i]
+    }
+  }
+}
+
+// my old solution
 function findUniq(arr) {
   let result = 0
   let notUnique = 0
