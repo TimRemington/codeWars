@@ -17,5 +17,21 @@ Find The Unique
 */
 
 function findUniq(arr) {
-  // do magic
+  let result = 0
+  let notUnique = 0
+
+  for(let i = 0; i < arr.length; i++) {
+    for(let j = 0; j < arr.length; j++) {
+      if(arr[i] === arr[j]) {
+        notUnique += 1
+      }
+    }
+
+    if (notUnique <= 1) {
+      result = arr[i]
+    }
+
+    notUnique = 0
+  }
+  return result
 }
