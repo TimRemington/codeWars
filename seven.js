@@ -28,6 +28,33 @@ seven(1603) should return [7, 2]
 seven(477557101) should return [28, 7]
 */
 
-function seven(m) {
-    // your code
+ffunction seven(m) {
+    if(m < 100) {
+      if(m % 7 === 0) {
+        return [m, 0]
+      } else {
+        return [m, 0]
+      }
+    }
+
+    let arr = m
+    let lastNum
+    let restNum = m
+    let result = m
+    let steps = 0
+
+    while(result > 100) {
+      arr = result.toString().split('')
+      lastNum = Number(arr.pop())
+      restNum = Number(arr.join(''))
+
+
+      console.log("restNum ====> ", restNum)
+      console.log("lastNum ====> ", lastNum * 2)
+      result = restNum - (2 * lastNum)
+      console.log(result)
+      steps++
+    }
+
+    return [result, steps]
 }
