@@ -11,5 +11,25 @@ uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 */
 
 var uniqueInOrder=function(iterable){
-  //your code here - remember iterable can be a string or an array
+  console.log(iterable)
+
+  let newStr
+  let result = []
+  if (typeof iterable !== "string") {
+    newStr = iterable
+    for (let i = 0; i < newStr.length; i++) {
+      if(newStr[i] !== newStr[i + 1] && newStr[i] !== newStr[i + 2] && newStr[i] !== ",") {
+        result.push(newStr[i])
+      }
+    }
+  } else {
+    newStr = iterable
+    for (let i = 0; i < newStr.length; i++) {
+      if(newStr[i] !== newStr[i + 1] && newStr[i] !== newStr[i + 2] && newStr[i] !== ",") {
+        result.push(newStr[i])
+      }
+    }
+  }
+
+  return result
 }
