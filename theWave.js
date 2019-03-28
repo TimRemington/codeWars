@@ -21,6 +21,20 @@ If you enjoyed this, then please try one of my other Katas. Any feedback, transl
 
 */
 
-function wave(){
-  // Code here
+function wave(str){
+  let result = []
+  let arr = str.split('')
+  let temp = str
+  let letter
+
+  for(let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+      letter = str[i].toUpperCase()
+      temp = str.split('')
+      temp.splice(i, 1, letter)
+      result.push(temp.join(''))
+    }
+  }
+
+  return result
 }
