@@ -32,3 +32,14 @@ function vowelRecognition(input){
   })
   return count
 }
+
+// Alternate solution
+function vowelRecognition(input){
+    let vowels = "AEIOUaeiou", res = 0;
+    for(let i = 0; i < input.length; i++){
+        if(vowels.includes(input[i])){
+            res += (i + 1) * (input.length - i);
+        }
+    }
+    return res;
+}
