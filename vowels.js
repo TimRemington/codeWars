@@ -26,5 +26,26 @@ Input Length: 5000 to 10000
 */
 
 function vowelRecognition(input){
-  // your code here
+  let regex = /[aeiouAEIOU]/
+  let str = ""
+  let arr = input.split('')
+  let number = arr.length
+  let temp = ""
+  let result = 0
+
+  for (let j = 0; j < number; j++) {
+    str = arr.join('')
+
+    for (let i = 0; i < arr.length; i++) {
+      temp += str[i]
+      console.log("temp ===> ", temp)
+      temp.split('').map(x => {
+          if(regex.test(x)) {result += 1}
+        }
+      )
+    }
+    temp = ""
+    arr.shift()
+  }
+  return result
 }
