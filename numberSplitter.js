@@ -13,5 +13,31 @@ The output for each test case consists of a pair of integer, containing the inte
 */
 
 function splitNumbers(n){
-  // your code here
+  var s=n.toString(2);
+  var a="", b="";
+  var count=0;
+  for (var i=s.length-1; i>=0; i--)
+  {
+    if (s[i]=="0")
+    {
+      a="0"+a;
+      b="0"+b;
+    }
+    else
+    {
+      if (count%2==0)
+      {
+        a="1"+a;
+        b="0"+b;
+        count++;
+      }
+      else
+      {
+        a="0"+a;
+        b="1"+b;
+        count++;
+      }
+    }
+  }
+  return [parseInt(a,2),parseInt(b,2)]
 }
