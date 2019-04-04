@@ -16,7 +16,14 @@ The elements in the returned array should be in the same order as in the initial
 */
 
 function gooseFilter (birds) {
-  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  let result = []
 
-  // return an array containing all of the strings in the input array except those that match strings in geese
+  for (let i = 0; i < birds.length; i++) {
+    if (geese.indexOf(birds[i]) === -1) {
+      result.push(birds[i])
+    }
+  }
+
+  return result
 };
