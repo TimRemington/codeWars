@@ -14,5 +14,22 @@ Example
 */
 
 function deleteNth(arr,n){
-  // ...
+  let result = []
+  let obj = {}
+
+  for (let i = 0; i < arr.length; i++) {
+    if(!obj[arr[i]]) {
+      obj[arr[i]] = 1
+      result.push(arr[i])
+    } else {
+
+      if (obj[arr[i]] < n) {
+        result.push(arr[i])
+      }
+      obj[arr[i]] += 1
+
+    }
+  }
+
+  return result
 }
