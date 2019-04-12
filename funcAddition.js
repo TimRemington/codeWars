@@ -11,6 +11,8 @@ var addThree = add(3);
 addThree(3); // 6
 */
 
-function add(n) {
-
+function add(x) {
+    return function(y){
+    return x + y;
+  };
 }
