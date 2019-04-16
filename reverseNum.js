@@ -12,5 +12,19 @@ Examples
 */
 
 function reverseNumber(n) {
-  // ...
+  let number = n.toString()
+  let result = ""
+  let negative = ""
+
+  if (number[0] === "-") {
+    negative = "-"
+    number = number.slice(1, number.length)
+
+  }
+
+  for (let i = number.length - 1; i >= 0; i--) {
+    result += number[i]
+  }
+
+  return Number(negative + result)
 }
