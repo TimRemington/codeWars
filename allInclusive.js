@@ -23,5 +23,19 @@ and for any array arr: contain_all_rots("", arr) --> true
 */
 
 function containAllRots(strng, arr) {
-    // your code
+  let copyStr = strng
+  let letter = ""
+  let restOfStr = ""
+  let final = ""
+
+  for (let i = 0; i < strng.length; i++) {
+
+    if (arr.includes(copyStr)) {
+      letter = copyStr[0]
+      restOfStr = copyStr.substring(1)
+      copyStr = restOfStr + letter
+    } else {
+      return false
+    }
+  }
 }
