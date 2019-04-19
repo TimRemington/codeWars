@@ -20,8 +20,15 @@ This is for beginners so we want to test basic loops and math operations. Advanc
 */
 
 // Sum Numbers
+// Sum Numbers
 function sum (numbers) {
     "use strict";
+    let result = 0
 
 
+    for (let i = 0; i < numbers.length; i++ ) {
+      result += numbers[i]
+    }
+
+    return result
 };
