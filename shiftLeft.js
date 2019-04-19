@@ -14,42 +14,50 @@ Both strings consist of lowercase latin letters.
 If the string is already empty, you cannot perform any more delete operations.
 */
 
-function shiftLeft(s, t){
-  let max = s.length
-  let long = s
-  let short = t
-  let count = 0
-
-  if (max < t.length) {
-    max = t.length
-    long = t
-    short = s
-  }
-
-
-  for (let i = 0; i < max; i++) {
-
-    if (short === long) {
-      return count
-    }
-
-    long = long.substring(1)
-    count++
-
-    if (short === long) {
-      return count
-    }
-
-    if (short.length >= long.length) {
-      short = short.substring(1)
-      count++
-    }
-
-    if (short === long) {
-      return count
-    }
-
-  }
-  return count
-
+function shiftLeft(s, t) {
+  let i = s.length, j = t.length;
+  while (i >= 0 && j >= 0 && s[i] == t[j])
+    i--, j--;
+  return (i + 1) + (j + 1);
 }
+
+//
+// function shiftLeft(s, t){
+//   let max = s.length
+//   let long = s
+//   let short = t
+//   let count = 0
+//
+//   if (max < t.length) {
+//     max = t.length
+//     long = t
+//     short = s
+//   }
+//
+//
+//   for (let i = 0; i < max; i++) {
+//
+//     if (short === long) {
+//       return count
+//     }
+//
+//     long = long.substring(1)
+//     count++
+//
+//     if (short === long) {
+//       return count
+//     }
+//
+//     if (short.length >= long.length) {
+//       short = short.substring(1)
+//       count++
+//     }
+//
+//     if (short === long) {
+//       return count
+//     }
+//
+//   }
+//   return count
+//
+// }
