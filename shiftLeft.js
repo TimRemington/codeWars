@@ -40,8 +40,10 @@ function shiftLeft(s, t){
       return count
     }
 
-    short = short.substring(1)
-    count++
+    if (short.length >= long.length) {
+      short = short.substring(1)
+      count++
+    }
 
     if (short === long) {
       return count
