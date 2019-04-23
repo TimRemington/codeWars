@@ -19,3 +19,8 @@ remove("!!!Hi !!hi!!! !hi",100) === "Hi hi hi"
 Note
 Please don't post issue about difficulty or duplicate.
 */
+
+function remove(s,n){
+  for (var i=0;i<n;i++) s=s.replace("!","");
+  return s;
+}
