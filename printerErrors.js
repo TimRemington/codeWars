@@ -21,5 +21,15 @@ error_printer(s) => "8/22"
 */
 
 function printerError(s) {
-    // your code
+    let length = s.length
+    let arr = s.split('')
+    let regex = /[a-m]/
+    let numerator = 0
+
+    for(let i = 0; i < length; i++) {
+      if(regex.test(arr[i]) === false) {
+        numerator++
+      }
+    }
+    return numerator.toString() + "/" + length.toString()
 }
