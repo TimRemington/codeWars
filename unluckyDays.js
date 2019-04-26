@@ -18,5 +18,11 @@ Note: In Ruby years will start from 1593.
 */
 
 function unluckyDays(year){
-  //your code here
+  let unlucky = 0;
+  for (var i = 0; i < 12; i++) {
+    if(new Date(year, i, 13).getDay() === 5){
+      unlucky++;
+    }
+  }
+  return unlucky;
 }
