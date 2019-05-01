@@ -11,5 +11,9 @@ In Python / Java / C / NASM / Haskell / the input will be a float.
 */
 
 function isNegativeZero(n) {
-
+  if (n === 0 && 1/n === -Infinity) {
+    return true
+  } else {
+    return false
+  }
 }
