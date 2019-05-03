@@ -14,5 +14,15 @@ longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 */
 
 function longest(s1, s2) {
-  
+  let finalStr = s1 + s2
+  let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  let result = ""
+
+  for(let i = 0; i < alphabet.length; i++) {
+    if (finalStr.indexOf(alphabet[i]) !== -1 && result.indexOf(alphabet[i]) === -1)  {
+      result += alphabet[i]
+    }
+  }
+
+  return result
 }
