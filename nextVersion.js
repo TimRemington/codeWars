@@ -20,5 +20,33 @@ You can assume all tests inputs to be valid.
 */
 
 function nextVersion(version){
-  //TODO : find the next version
+  let arr = version.split('.')
+  let length = arr.length
+  let lastnum = arr.length - 1
+  let num = 0
+  let result = []
+  let active = true
+
+  for (let i = length; i > 0; i--) {
+    num = Number(arr[lastnum]) + 1
+
+    if (num === 10 && active === true) {
+      if(lastnum === 0) {
+        num.toString()
+        result.unshift(num)
+      } else {
+        result.unshift("0")
+      }
+    } else if (active === true) {
+      result.unshift(num.toString())
+      active = false
+    } else {
+      result.unshift(arr[lastnum])
+      active = false
+    }
+
+    lastnum--
+  }
+
+  return result.join(".")
 }
