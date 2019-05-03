@@ -18,3 +18,7 @@ All numbers, except the first one, must be lower than 10: if there are, you have
 
 You can assume all tests inputs to be valid.
 */
+
+function nextVersion(version){
+  //TODO : find the next version
+}
