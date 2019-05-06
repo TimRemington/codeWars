@@ -27,5 +27,22 @@ Example:
 */
 
 function bouncingBall(h,  bounce,  window) {
-  // your code here
+  if (0 > h) {return -1}
+  if (bounce < 0 || bounce > 1) {return -1}
+  if(window > h) {return -1}
+
+  let result = h
+  let sight = 0
+
+  while (result > window) {
+    if (result > window) {
+      sight++
+    }
+    result *= bounce
+    if (result > window) {
+      sight++
+    }
+  }
+
+  return sight
 }
