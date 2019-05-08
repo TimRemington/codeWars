@@ -14,3 +14,22 @@ the numbers of interest are
 so there are 11 digits `1` for the squares of numbers between 0 and 25.
 Note that 121 has twice the digit 1.
 */
+
+function nbDig(n, d) {
+    let result = 0
+    let temp = 0
+    let strDigit = d.toString()
+    let str = ""
+
+    for (let i = 0; i <= n; i++) {
+      temp = i ** 2
+      str = temp.toString()
+      if(str.includes(strDigit)) {
+        str.split('').forEach(function(x) {
+          if (x === strDigit) {result++}
+        })
+      }
+    }
+
+    return result
+}
