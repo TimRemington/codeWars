@@ -28,5 +28,21 @@ Depending on the cumulative score of the team, return the appropriate sentiment:
 */
 
 function boredom(staff){
+  let result = 0
+  let str = ""
+  let scores = { 'accounts': 1, 'finance': 2,  'canteen': 10, 'regulation': 3, 'trading': 6, 'change': 6,'IS': 8, 'retail': 5,'cleaning': 4,'pissing about': 25 }
 
+  for (let item in staff) {
+    str = staff[item]
+    result += scores[str]
+  }
+
+
+  if (result <= 80) {
+    return 'kill me now'
+  } else if (result > 80 && result < 100) {
+    return 'i can handle this'
+  } else {
+    return 'party time!!'
+  }
 }
