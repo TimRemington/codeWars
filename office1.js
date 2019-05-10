@@ -13,5 +13,25 @@ Note that your boss is in the room (boss), their score is worth double it's face
 */
 
 function outed(meet, boss){
+  let result = 0
+  let total = 0
+  let numOfPeople = 0
 
+  for (let item in meet) {
+    if (item === boss) {
+      total += meet[item] * 2
+    } else {
+      total += meet[item]
+    }
+
+    numOfPeople++
+  }
+
+  result =  total / numOfPeople
+
+  if (result <= 5) {
+    return "Get Out Now!"
+  } else {
+    return "Nice Work Champ!"
+  }
 }
