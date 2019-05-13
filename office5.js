@@ -17,33 +17,54 @@ If you need no chairs, return 'Game On'. If there aren't enough spare chairs ava
 */
 
 function meeting(x, need){
-  let result = []
-  let total = need
-  let temp = 0
-  let counter = 0
 
-  if (need === 0) {return 'Game On'}
+  if (need == 0) {return 'Game On'};
+  let took = [];
 
-  for (let i = 0; i < x.length; i++) {
-    temp = x[i][1] - x[i][0].length
+  let freeChairsInRooms = x
+  .map(r => { let i = r[1] - r[0].length; return i <= 0 ? 0 : i; })
+  if (freeChairsInRooms.reduce((a,b) => a+b,0) < need) { return 'Not enough!' }
 
-    if (temp > 0) {
-      counter = total
-      total -= temp
-      console.log(total)
-      if (total > 0) {
-        result[i] = temp
-      } else {
-        result[i] = counter
-        return result
-      }
-
-
-    } else {
-      result[i] = 0
-    }
-
+  for (let i = 0; i < freeChairsInRooms.length; i++) {
+    let chairs = freeChairsInRooms[i];
+    if (need != 0) {
+      if (need - chairs >= 0) { need -= chairs; took.push(chairs); continue;
+      } else { took.push(need); need -= need; continue; };
+    } else { break; }
   }
 
-  return 'Not enough!'
-}
+  return took;
+
+} 
+
+// function meeting(x, need){
+//   let result = []
+//   let total = need
+//   let temp = 0
+//   let counter = 0
+//
+//   if (need === 0) {return 'Game On'}
+//
+//   for (let i = 0; i < x.length; i++) {
+//     temp = x[i][1] - x[i][0].length
+//
+//     if (temp > 0) {
+//       counter = total
+//       total -= temp
+//       console.log(total)
+//       if (total > 0) {
+//         result[i] = temp
+//       } else {
+//         result[i] = counter
+//         return result
+//       }
+//
+//
+//     } else {
+//       result[i] = 0
+//     }
+//
+//   }
+//
+//   return 'Not enough!'
+// }
