@@ -34,5 +34,24 @@ function solve(s) {
   }
 
   return result
-
 };
+
+// New way to solve it
+
+// function solve(s) {
+//   function getValue(s) {
+//     // This gets the value of any substrings as well as individual chars
+//     let value = 0;
+//     s.split('').map((char, i) => {
+//       value += s.charCodeAt(i) - 96;
+//     });
+//     return value;
+//   }
+// 
+//   const noVowels = s
+//     .replace(/[aeiou]/g, " ")
+//     .split(" ")
+//     .filter(n => n !== "");
+//
+//   return Math.max(...noVowels.map(substr => getValue(substr)));
+// }
