@@ -17,5 +17,33 @@ If you need no chairs, return 'Game On'. If there aren't enough spare chairs ava
 */
 
 function meeting(x, need){
+  let result = []
+  let total = need
+  let temp = 0
+  let counter = 0
 
+  if (need === 0) {return 'Game On'}
+
+  for (let i = 0; i < x.length; i++) {
+    temp = x[i][1] - x[i][0].length
+
+    if (temp > 0) {
+      counter = total
+      total -= temp
+      console.log(total)
+      if (total > 0) {
+        result[i] = temp
+      } else {
+        result[i] = counter
+        return result
+      }
+
+
+    } else {
+      result[i] = 0
+    }
+
+  }
+
+  return 'Not enough!'
 }
