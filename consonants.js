@@ -19,5 +19,20 @@ More examples in test cases. Good luck!
 */
 
 function solve(s) {
-  return 0;
+  let vowels = /[aeiou]/
+  let alphabet = '0abcdefghijklmnopqrstuvwxyz'
+  let total = 0
+  let result = 0
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i].match(vowels) !== null) {
+      total = 0
+    } else {
+      total += alphabet.indexOf(s[i])
+      if (total > result) {result = total}
+    }
+  }
+
+  return result
+
 };
