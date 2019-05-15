@@ -5,5 +5,11 @@ Write function sumR which returns the sum of values in a given list. Try no to c
 */
 
 function sumR(x) {
-  return 0;
+  if(x.length === 0) {return 0}
+
+  if (x.length === 1) {
+    return x[0]
+  } else {
+    return x[0] + sumR(x.splice(1))
+  }
 }
