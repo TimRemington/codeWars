@@ -19,5 +19,19 @@ If the sum of the three parameters (as described above) is > 22, return 'Sabbati
 */
 
 function sabb(x, val, happ){
+  let result = val + happ
+  let regex = /[sabticl]/g
 
+  for (let i = 0; i < x.length; i++) {
+    if(x[i].match(regex)) {
+      result += 1
+    }
+  }
+
+
+  if (result > 22) {
+    return "Sabbatical! Boom!"
+  } else {
+    return "Back to your desk, boy."
+  }
 }
