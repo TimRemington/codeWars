@@ -21,22 +21,5 @@ stringExpansion('') === ''
 */
 
 function stringExpansion(s) {
-  let result = ""
-  let num = 1
-  let temp
 
-  if (s.length === 0) {return result}
-
-  for (let i = 0; i < s.length; i++) {
-    temp = Number(s[i])
-    if (isNaN(temp) === true) {
-      for(let j = num; j > 0; j--) {
-        result += s[i]
-      }
-    } else {
-      num = Number(s[i])
-    }
-  }
-
-  return result
 }
