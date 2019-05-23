@@ -15,5 +15,17 @@ For example:
 */
 
 function persistence(num) {
-   //code me
+   if(num < 10) {return 0}
+
+   let result = 0
+   let arr = []
+   let reducer = (accumulator, currentValue) => accumulator * currentValue
+
+   while (num > 9) {
+     arr = num.toString().split("").map(function(t){return parseInt(t)})
+     num = arr.reduce(reducer)
+     result++
+   }
+
+   return result
 }
