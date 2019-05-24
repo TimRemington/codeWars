@@ -21,5 +21,20 @@ For C: The result is freed.
 */
 
 function orderWeight(strng) {
-    // your code
+    let arr = strng.split(" ")
+    let temp = ""
+    let obj = {}
+    let sorted = 0
+
+    for (let i = 0; i < arr.length; i++) {
+      temp = arr[i].split('')
+      for (let j = 0; j < temp.length; j++) {
+        sorted += Number(temp[j])
+      }
+      obj[arr[i]] = sorted
+      sorted = 0
+    }
+
+    let keysSorted = Object.keys(obj).sort(function(a,b){return obj[a]-obj[b]})
+    return keysSorted.join(' ')
 }
