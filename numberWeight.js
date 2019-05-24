@@ -23,18 +23,27 @@ For C: The result is freed.
 function orderWeight(strng) {
     let arr = strng.split(" ")
     let temp = ""
-    let obj = {}
     let sorted = 0
+    let matrix = []
+    let result = []
+
 
     for (let i = 0; i < arr.length; i++) {
       temp = arr[i].split('')
       for (let j = 0; j < temp.length; j++) {
         sorted += Number(temp[j])
       }
-      obj[arr[i]] = sorted
+      matrix.push([arr[i], sorted])
       sorted = 0
     }
 
-    let keysSorted = Object.keys(obj).sort(function(a,b){return obj[a]-obj[b]})
-    return keysSorted.join(' ')
+    matrix.sort(function(a, b) {
+      return a[1] - b[1];
+    })
+
+    for (let j = 0; j < matrix.length; j++) {
+      result.push(matrix[j][0])
+    }
+
+    return result.join(' ')
 }
