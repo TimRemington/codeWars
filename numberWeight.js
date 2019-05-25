@@ -21,29 +21,43 @@ For C: The result is freed.
 */
 
 function orderWeight(strng) {
-    let arr = strng.split(" ")
-    let temp = ""
-    let sorted = 0
-    let matrix = []
-    let result = []
-
-
-    for (let i = 0; i < arr.length; i++) {
-      temp = arr[i].split('')
-      for (let j = 0; j < temp.length; j++) {
-        sorted += Number(temp[j])
+    const str = strng.split(' ');
+    str.sort((left, right) => {
+      const leftSum = [...left].reduce((acc, val) => acc + Number(val), 0);
+      const rightSum = [...right].reduce((acc, val) => acc + Number(val), 0);
+      const isEqual = leftSum === rightSum;
+      if (isEqual) {
+        return left < right ? -1 : 1;
       }
-      matrix.push([arr[i], sorted])
-      sorted = 0
-    }
-
-    matrix.sort(function(a, b) {
-      return a[1] - b[1];
-    })
-
-    for (let j = 0; j < matrix.length; j++) {
-      result.push(matrix[j][0])
-    }
-
-    return result.join(' ')
+      return leftSum < rightSum ? -1 : 1;
+    });
+    return str.join(' ');
 }
+
+// function orderWeight(strng) {
+//     let arr = strng.split(" ")
+//     let temp = ""
+//     let sorted = 0
+//     let matrix = []
+//     let result = []
+//
+//
+//     for (let i = 0; i < arr.length; i++) {
+//       temp = arr[i].split('')
+//       for (let j = 0; j < temp.length; j++) {
+//         sorted += Number(temp[j])
+//       }
+//       matrix.push([arr[i], sorted])
+//       sorted = 0
+//     }
+//
+//     matrix.sort(function(a, b) {
+//       return a[1] - b[1];
+//     })
+//
+//     for (let j = 0; j < matrix.length; j++) {
+//       result.push(matrix[j][0])
+//     }
+//
+//     return result.join(' ')
+// }
