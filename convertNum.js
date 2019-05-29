@@ -11,5 +11,5 @@ numberToString(999); // returns '999';`
 */
 
 function numberToString(num) {
-  // Return a string of the number here!
+  return num.toString()
 }
