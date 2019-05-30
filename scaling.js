@@ -20,5 +20,12 @@ scale(a, 2, 3) --> "aabbccdd\naabbccdd\naabbccdd\neeffgghh\neeffgghh\neeffgghh\n
 */
 
 function scale(strng, k, n) {
-    // your code
+  if(strng.length === 0) return "";
+  return strng.split("\n").map(function(val) {
+    return val.split('').map(function(v) { return Array(k+1).join(v); }).join('');
+  }).map(function(val) {
+    var a = [];
+    for(var i = 0; i < n; i++) { a.push(val) };
+    return a.join("\n");
+  }).join("\n");
 }
