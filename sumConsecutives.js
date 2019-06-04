@@ -23,5 +23,21 @@ consecutives 3 is 6 ..."""
 */
 
 function sumConsecutives(s) {
-    // your code
-}
+    let result = []
+    let repeat = false
+    let counter = 1
+    let end
+
+
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] === s[i + 1]) {
+        repeat = true
+        counter++
+      } else {
+        result.push(s[i] * counter)
+        counter = 1
+      }
+    }
+
+    return result
+  }
