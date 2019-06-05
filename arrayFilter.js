@@ -9,5 +9,13 @@ getEvenNumbers([2,4,5,6]) // should == [2,4,6]
 */
 
 function getEvenNumbers(numbersArray){
-  // filter out the odd numbers
+  let result = []
+
+  for (let i = 0; i < numbersArray.length; i++) {
+    if(numbersArray[i] % 2 === 0) {
+      result.push(numbersArray[i])
+    }
+  }
+
+  return result
 }
