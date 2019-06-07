@@ -45,6 +45,25 @@ Happy Coding ^_^
 */
 
 function findUnknowNumber(x,y,z){
-  //coding and coding..
+  let result = 1
+  let checkOne = false
+  let checkTwo = false
+  let checkThree = false
 
+  while(100000 > result) {
+
+    if (result % 3 === x) {checkOne = true}
+    if (result % 5 === y) {checkTwo = true}
+    if (result % 7 === z) {checkThree = true}
+
+    if (checkOne === true && checkTwo === true && checkThree === true) {
+      return result
+    }
+    console.log(result)
+    result++
+    checkOne = false
+    checkTwo = false
+    checkThree = false
+
+  }
 }
