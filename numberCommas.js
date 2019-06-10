@@ -17,5 +17,21 @@ Examples
 */
 
 function groupByCommas(n) {
+  let stringn = n.toString()
+  let length = stringn.length
+  let decreaser = 0
+  let result = ""
+  let counter = 0
 
+  for (let i = length - 1; i >= 0; i--) {
+    result += stringn[i]
+    console.log(result)
+    counter++
+    if (counter === 3 && stringn[i - 1]) {
+      result+= ","
+      counter = 0
+    }
+  }
+
+  return result.split('').reverse().join('')
 }
