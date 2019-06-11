@@ -11,6 +11,16 @@ spinWords( "This is a test") => returns "This is a test"
 spinWords( "This is another test" )=> returns "This is rehtona test"
 */
 
-function spinWords(){
-  //TODO Have fun :)
+function spinWords(str){
+  let arr = str.split(' ')
+  let result = []
+
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i].length >= 5) {
+      result.push(arr[i].split('').reverse().join(''))
+    } else {
+      result.push(arr[i])
+    }
+  }
+  return result.join(' ')
 }
