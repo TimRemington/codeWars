@@ -20,5 +20,16 @@ Note: In the C and NASM languages you are given the third parameter which is the
 */
 
 function dataReverse(data) {
-  // Your code here
+  let length = data.length
+  let result = []
+  let temp
+
+  for (let i = length; i > 0; i -= 8) {
+    temp = data.slice(i - 8, i)
+    for (let j = 0; j < temp.length; j++) {
+      result.push(temp[j])
+    }
+  }
+
+  return result
 }
