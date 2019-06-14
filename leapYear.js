@@ -12,6 +12,10 @@ Examples can be found in the test fixture.
 */
 
 function isLeapYear(year) {
+  return (year % 100 !== 0 && year % 4 === 0) || year % 400 === 0;
+}
+
+function isLeapYear(year) {
   if (year % 4 === 0) {
     if (year % 100 === 0) {
       if (year % 400 === 0) {
