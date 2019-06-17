@@ -29,5 +29,21 @@ Please ask before translating: some translations are already written and publish
 */
 
 function partsSums(ls) {
-    // your code
+    let length = ls.length
+    let result = []
+    let newls = ls
+    let sum
+    let tempArr
+    const reducer = (accumulator, currentValue) => accumulator + currentValue
+
+    for(let i = 0; i < length; i++) {
+      tempArr = newls
+      sum = tempArr.reduce(reducer)
+      result.push(sum)
+      sum = 0
+      newls.shift()
+    }
+
+    result.push(0)
+    return result
 }
