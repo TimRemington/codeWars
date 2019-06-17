@@ -29,6 +29,17 @@ Please ask before translating: some translations are already written and publish
 */
 
 function partsSums(ls) {
+    let t = ls.reduce((a, b) => a + b, 0);
+    let res = Array(ls.length + 1).fill(0);
+    res[0] = t;
+    for (let i = 1; i < res.length; i++) {
+        t -= ls[i - 1];
+        res[i] = t;
+    }
+    return res;
+}
+
+function partsSums(ls) {
     let length = ls.length
     let result = []
     let newls = ls
