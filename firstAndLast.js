@@ -5,6 +5,8 @@ It's pretty straightforward. Your goal is to create a function that removes the 
 */
 
 function removeChar(str){
- //You got this!
-
+ let arr = str.split('')
+ arr.pop()
+ arr.shift()
+ return arr.join('')
 };
