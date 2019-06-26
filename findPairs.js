@@ -16,6 +16,12 @@ Examples
 ...because there are 4 pairs: 2, 20, 6 and 2 (again)
 */
 
-function duplicates(array){
-//Make the magic happen
+function duplicates(array) {
+  return Object.values(
+
+    array.reduce((count, item) => ((
+      count.hasOwnProperty(item) ? count[item]++ : count[item] = 1
+    ), count), {})
+
+  ).reduce((sum, occurrence) => sum + Math.floor(occurrence / 2), 0);
 }
