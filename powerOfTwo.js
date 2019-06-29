@@ -15,5 +15,8 @@ Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 
 */
 
 function isPowerOfTwo(n){
-  //.. should return true or false ..
+  if(n === 0) {return false}
+  if(n === 1) {return true}
+
+  return n && (n & (n - 1)) === 0
 }
