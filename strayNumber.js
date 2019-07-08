@@ -13,5 +13,11 @@ Examples
 */
 
 function stray(numbers) {
-  return 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    if(numbers[i] !== numbers[i + 1] && numbers[i] !== numbers[i - 1]) {
+      return numbers[i]
+    }
+  }
+
 }
