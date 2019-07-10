@@ -28,5 +28,21 @@ average:   [22.5, 11, 38.75, 38.25, 19.5]
 */
 
 function avgArray(arr) {
+  let result = []
+  let length = arr[0].length
+  let addednums = 0
+  let average = 0
 
+  for(let i = 00; i < length; i++) {
+    for(let j = 0; j < arr.length; j++) {
+      addednums += arr[j][i]
+      average++
+    }
+
+    result.push(addednums / average)
+    average = 0
+    addednums = 0
+  }
+
+  return result
 }
