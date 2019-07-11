@@ -12,5 +12,8 @@ Input: 1254859723 Output: 9875543221
 */
 
 function descendingOrder(n){
-  //...
+  let string = n.toString()
+  let arr = string.split('')
+
+  return Number(arr.sort().reverse().join(''))
 }
