@@ -51,7 +51,7 @@ function jumpingNumber(n){
   for(let i = 0; i < string.length - 1; i++) {
     checkNumber = Number(string[i]) - Number(string[i + 1])
 
-    if (checkNumber > 1 || checkNumber < -1) {
+    if (checkNumber > 1 || checkNumber < -1 || checkNumber === 0) {
       return "Not!!"
     }
   }
