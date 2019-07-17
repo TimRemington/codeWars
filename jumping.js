@@ -43,5 +43,18 @@ Adjacent digits differ by 1
 */
 
 function jumpingNumber(n){
-  //your code here
+  let string = n.toString().split('')
+  let checkNumber
+
+  if (string.length === 1) {return "Jumping!!"}
+
+  for(let i = 0; i < string.length - 1; i++) {
+    checkNumber = Number(string[i]) - Number(string[i + 1])
+
+    if (checkNumber > 1 || checkNumber < -1) {
+      return "Not!!"
+    }
+  }
+
+  return "Jumping!!"
 }
