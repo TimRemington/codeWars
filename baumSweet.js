@@ -17,4 +17,16 @@ Note that the binary representation of 0 used here is not 0 but the empty string
 
 function* baumSweet() {
   yield 1;
+
+let number = 1;
+
+while (true) {
+  yield number
+    .toString(2)
+    .split('1')
+    .filter((item) => item)
+    .every(({length}) => !(length % 2)) ? 1 : 0;
+
+  number += 1;
+}
 }
