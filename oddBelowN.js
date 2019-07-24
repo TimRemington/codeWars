@@ -9,5 +9,9 @@ Expect large Inputs!
 */
 
 function oddCount(n){
-  // your code here
+  let result = 0
+  for(let i = n - 1; i > 0; i--) {
+    if(i % 2 === 1) { result++ }
+  }
+  return result
 }
