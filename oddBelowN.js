@@ -15,3 +15,12 @@ function oddCount(n){
   }
   return result
 }
+
+// Other way to do it:
+// function oddCount(n){
+//   let result = 0
+//
+//   if (n % 2 === 0) {return n / 2}
+//   if (n % 2 === 1) {return (n - 1) / 2}
+//
+// }
