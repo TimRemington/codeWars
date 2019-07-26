@@ -12,5 +12,13 @@ should return
 */
 
 function multiples(m, n){
-  // code here
+  let result = []
+  let max = m * n
+
+  while (max != 0) {
+    result.unshift(max)
+    max -= n
+  }
+
+  return result
 }
