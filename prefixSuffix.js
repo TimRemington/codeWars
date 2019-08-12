@@ -16,5 +16,22 @@ More examples in test cases. Good luck!
 */
 
 function solve(s){
-    //..
+    let prefix = s.slice(0, s.length / 2)
+    let suffix = s.slice(s.length / 2)
+    let size = prefix.length
+
+    if(s.length % 2 === 1) {
+      suffix = suffix.slice(1)
+    }
+
+
+    for (let i = 0; i < size; i++) {
+      if(prefix === suffix) {
+        return prefix.length
+      }
+      prefix = prefix.slice(0, -1)
+      suffix = suffix.slice(1)
+    }
+
+    return 0
 }
