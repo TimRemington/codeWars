@@ -18,5 +18,9 @@ If you like this Kata, please try:
 */
 
 function solve(arr){
-//code
+  .map(v => v.toLowerCase())
+   .map(v => v
+     .split('')
+     .map(w => w.charCodeAt(0) - 97)
+     .reduce((a, c, i) => c == i ? a + 1 : a, 0)
 };
