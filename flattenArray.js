@@ -18,6 +18,13 @@ http://stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javas
 "use strict";
 
 function flattenAndSort(array) {
-  // Good luck, brave code warrior!
-  return array;
+  let result = []
+
+  for(let i = 0; i < array.length; i++) {
+    for(let j = 0; j < array[i].length; j++) {
+      result.push(array[i][j])
+    }
+  }
+
+  return result.sort(function(a, b){return a-b})
 }
