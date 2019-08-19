@@ -15,5 +15,9 @@ Output:
 */
 
 function removeDuplicateWords (s) {
-  // your perfect code...
+  let arr = s.split(' ')
+  let result = arr.filter(function (value, index, self) {
+    return self.indexOf(value) === index;
+  })
+  return result.join(' ')
 }
