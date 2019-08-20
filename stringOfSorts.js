@@ -14,5 +14,23 @@ Any character in the first string that does not appear in the second string shou
 */
 
 function sortString(string,ordering) {
-  return string;
+  let cycle = true
+  let hangingLetters = ""
+  let result = ''
+
+  for(let i = 0; i < ordering.length; i++) {
+
+    for(let j = 0; j < string.length; j++) {
+      if(string[j] === ordering[i]) {
+        result += string[j]
+      }
+      if(ordering.indexOf(string[j]) === -1 && cycle) {
+        hangingLetters += string[j]
+      }
+    }
+
+    cycle = false
+  }
+
+  return result + hangingLetters
 }
