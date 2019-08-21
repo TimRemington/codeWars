@@ -7,5 +7,19 @@ For the languages where the string is not immutable (such as ruby), don't modify
 */
 
 function covfefe(str){
-  //covfefe !
+  let arr = str.split(' ')
+
+  if(str.indexOf('coverage') !== -1) {
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i] === 'coverage') {
+        arr[i] = 'covfefe'
+      }
+    }
+
+  } else {
+    arr.push('covfefe')
+  }
+
+  return arr.join(' ')
+
 }
