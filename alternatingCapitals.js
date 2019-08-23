@@ -11,5 +11,19 @@ Good luck!
 */
 
 function capitalize(s){
-  return [];
+  let odds = ""
+  let evens = ""
+
+
+  for(let i = 0; i < s.length; i++) {
+    if (i % 2 === 1) {
+      odds += s[i].toUpperCase()
+      evens += s[i]
+    } else {
+      odds += s[i]
+      evens += s[i].toUpperCase()
+    }
+  }
+
+  return [evens, odds]
 };
