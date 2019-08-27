@@ -9,5 +9,10 @@ Return true if the array contains the value, false if not.
 */
 
 function check(a, x) {
-  // your code here
+  for(let i = 0; i < a.length; i++) {
+    if(x == a[i]) {
+      return true
+    }
+  }
+  return false
 }
