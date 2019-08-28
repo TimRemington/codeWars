@@ -17,5 +17,6 @@ https://www.codewars.com/kata/no-loops-3-copy-within
 */
 
 function smallEnough(a, limit){
-
+  a.sort((c,d)=>d-c)
+  return a[0]<=limit
 }
