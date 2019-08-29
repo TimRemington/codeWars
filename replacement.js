@@ -19,17 +19,23 @@ Examples:
 ([2,2,2])      =>  [1,2,2]
 */
 
-function replacement(a){
-  let max = a[0]
-  let min = a[0]
+function replacement(arr){
+  let index = arr.indexOf(Math.max(...arr));
+  let min = Math.min(...arr);
 
-  for(let i = 0; i < a.length; i++) {
-    if(a[i] > max) { max = a[i] }
-    if(a[i] < min) { min = a[i] }
+  if (min === 1) {
+      let all1Arr = arr.every(a => a === 1);
+      if (all1Arr)
+        arr[index] = 2
+      else
+        arr[index] = 1;
+
+
+  } else {
+     arr[index] = 1;
   }
 
-  let index = a.indexOf(max)
-  a[index] = 1
-  return a.sort(function(x, y){return x-y});
+
+  return arr.sort((a,b) => a-b);
 
 }
