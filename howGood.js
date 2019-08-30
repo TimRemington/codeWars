@@ -10,5 +10,12 @@ Return True if you're better, else False!
 */
 
 function betterThanAverage(classPoints, yourPoints) {
-  // Your code here
+  let total = 0
+  for(let i = 0; i < classPoints.length; i++) {
+    total += classPoints[i]
+  }
+  let average = total / classPoints.length
+
+  if(average >= yourPoints) {return false}
+  if(average < yourPoints) {return true}
 }
