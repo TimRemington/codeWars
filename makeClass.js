@@ -17,5 +17,7 @@ const Animal = makeClass("name","species","age","health","weight","color")
 */
 
 function makeClass(...properties) {
-  //
+  return function(...values) {
+    properties.forEach((property, i) => this[property] = values[i]);
+  }
 }
