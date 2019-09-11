@@ -10,5 +10,9 @@ You can assume that all values are integers. Do not mutate the input array/list.
 */
 
 function invert(array) {
-   return ;
+  let newArr = [];
+  for(var i = 0; i < array.length; i++){
+      newArr.push(-array[i]);
+    }
+    return newArr;
 }
