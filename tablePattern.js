@@ -46,8 +46,33 @@ pattern(3, 4, "Nice pattern") should return:
 +---+---+---+---+
 */
 
-function pattern(rows,columns,str){
-  //coding and coding..
+function pattern(rows,columns,str)
+  let charAtStrIndex = 0;
+  let motif = '';
+  let result = "";
 
+  for (let i = 0; i < columns; i++) {
+   motif += '+---'
+  }
+  motif += '+'
 
+  for (let i = 0; i < 2*rows + 1; i++) {
+   if (i % 2 == 0) {
+     result += motif;
+     if (i < 2 * rows) {
+       result += '\n'
+     }
+   } else {
+     for (let j = 0; j < columns; j++) {
+       if (str[charAtStrIndex] != undefined) {
+         result += `| ${str[charAtStrIndex]} `
+         charAtStrIndex += 1
+       } else {
+         result += '|   '
+       }
+     }
+     result += '|\n'
+   }
+  }
+  return result
 }
