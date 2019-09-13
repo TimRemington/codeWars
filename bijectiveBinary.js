@@ -19,10 +19,44 @@ https://en.wikipedia.org/wiki/Bijective_numeration
 */
 
 const bijectiveBinary = {
-    convertToInt: function(str){
-        // enter your code here
-    },
-    convertFromInt: function(int){
-        // enter your code here
-    }
+  convertToInt: function(str){
+      if (!str) {
+        return 0;
+      }
+      var toInteger = 0;
+      for (var i = 0; i < str.length; i++) {
+        toInteger += str[i] * Math.pow(2, str.length - (i + 1));
+      }
+      return toInteger;
+  },
+  convertFromInt: function(int){
+
+      if (!int) {
+        return "";
+      }
+
+      var getQ = function(n) {
+        return Math.ceil(n / 2) - 1;
+      }
+
+      var overTurnString = function(string) {
+        var newString = "";
+        for (var i = string.length - 1; i >= 0; i--) {
+          newString += string[i];
+        }
+        return newString;
+      }
+
+      var prevQ = int;
+      var nextQ = getQ(int);
+      var toString = "";
+
+      while (prevQ != 0) {
+        toString += prevQ - nextQ * 2;
+        prevQ = nextQ;
+        nextQ = getQ(nextQ);
+      }
+
+      return overTurnString(toString);
+  }
 };
